@@ -5,7 +5,6 @@ from datetime import datetime
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////home/lucas/Desktop/LearnFlask/test.db'
 
-
 db = SQLAlchemy(app)
 
 class Todo(db.Model):
@@ -55,7 +54,6 @@ def update(id):
             return "There was a problem with update task"
     else:
         return render_template('update.html', task=task)
-
 
 if __name__ == '__main__':
     app.run(debug=True)
